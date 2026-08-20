@@ -1,10 +1,8 @@
 class Solution {
 public:
     vector<int> resultArray(vector<int>& nums) {
-        vector<int> arr1;
-        arr1.push_back(nums[0]);
-        vector<int> arr2;
-        arr2.push_back(nums[1]);
+        vector<int> arr1 {nums[0]};
+        vector<int> arr2 = {nums[1]};
         int count = 2;
 
         while (count < nums.size()) {
