@@ -18,9 +18,7 @@ public:
 
         vector<long long> cnt(mx + 1, 0);
 
-        for(auto x : v){
-            cnt[x]++;
-        }
+        for(auto x : v) cnt[x]++;
 
         for(long long i = mx; i > 0 && k > 0; i--){
             long long need = cnt[i];
@@ -35,9 +33,7 @@ public:
 
         long long res = 0;
 
-        for(long long i = 0; i < cnt.size(); i++){
-            res += cnt[i] * i * i;
-        }
+        for(long long i = 0; i < cnt.size(); i++) res += cnt[i] * i * i;
 
         return res;
     }
