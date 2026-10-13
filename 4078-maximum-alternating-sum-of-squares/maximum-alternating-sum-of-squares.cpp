@@ -6,12 +6,8 @@ public:
     long long maxAlternatingSum(vector<int>& nums) {
         map<ll, ll> hash;
 
-        for (int i = 0; i < nums.size(); i++) {
-            if (nums[i] < 0) hash[abs(nums[i])]++;
-            else hash[nums[i]]++;
-        };
+        for (int i = 0; i < nums.size(); i++) hash[abs(nums[i])]++;
 
-        ll ans = 0;
         ll count = 0;
         ll sum = 0;
 
