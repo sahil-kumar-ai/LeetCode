@@ -11,16 +11,14 @@ public:
             }
 
             else if (sum >= 10) {
-                s += to_string(9);
+                s += '9';
                 num--;
                 sum -= 9;
             }
         }
 
-        string ans = "";
+        if (sum != 0) return "";;
 
-        if (sum == 0) ans = s;
-
-        return ans;
+        return s;
     }
 };
