@@ -20,7 +20,7 @@ public:
 
         int ma = INT_MIN, n = arr.size();
 
-        for (int i = 0; i <= n / 2; i++) ma = max(ma, arr[i] + arr[n- 1 - i]);
+        for (int i = 0; i < n / 2; i++) ma = max(ma, arr[i] + arr[n- 1 - i]);
 
         return ma;
     }
