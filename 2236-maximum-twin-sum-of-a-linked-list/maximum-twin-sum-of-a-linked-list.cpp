@@ -10,20 +10,21 @@
  */
 class Solution {
 public:
+    using ln = ListNode*;
     int pairSum(ListNode* head) {
-        ListNode* slow = head;
-        ListNode* fast = head;
+        ln slow = head;
+        ln fast = head;
 
         while (fast != NULL && fast -> next != NULL) {
             slow = slow -> next;
             fast = fast -> next -> next;
         };
 
-        ListNode* prev = NULL;
-        ListNode* curr = slow;
+        ln prev = NULL;
+        ln curr = slow;
         
         while (curr) {
-            ListNode* nextNode = curr -> next;
+            ln nextNode = curr -> next;
             curr -> next = prev;
             prev = curr;
             curr = nextNode;
