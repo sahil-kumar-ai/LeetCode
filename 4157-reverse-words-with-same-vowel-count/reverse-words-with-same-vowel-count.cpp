@@ -27,14 +27,14 @@ public:
         arr.push_back(p);
 
         int vowels = countVowels(arr[0]);
-        string t = "";
+        string t = arr[0];
 
-        for (int i = 0; i < arr.size(); i++) {
-            if (i > 0 && countVowels(arr[i]) == vowels) {
+        for (int i = 1; i < arr.size(); i++) {
+            t += ' ';
+            if (countVowels(arr[i]) == vowels) {
                 reverse(arr[i].begin(), arr[i].end());
             }
 
-            if (i > 0) t += " ";
             t += arr[i];
         }
 
