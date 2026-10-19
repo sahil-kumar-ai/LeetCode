@@ -24,7 +24,7 @@ public:
             }
         }
 
-        arr.push_back(p); // Your original code missed the last word
+        arr.push_back(p);
 
         int vowels = countVowels(arr[0]);
         string t = "";
