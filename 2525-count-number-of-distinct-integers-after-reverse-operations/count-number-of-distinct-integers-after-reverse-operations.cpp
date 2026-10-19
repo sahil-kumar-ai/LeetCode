@@ -13,7 +13,7 @@ public:
 
     int countDistinctIntegers(vector<int>& nums) {
         unordered_set<int> st;
-        int c = 0;
+        st.reserve(nums.size() * 2);
 
         for (int elem : nums) {
             st.insert(elem);
