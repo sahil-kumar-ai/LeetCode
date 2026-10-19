@@ -1,27 +1,26 @@
 class Solution {
 public:
-    int reverseDig(int num) {
+    int reverseDig(int num, map<int, int>& hash) {
         int ans = 0;
+        hash[num]++;
 
         while (num) {
             ans = ans * 10 + (num % 10);
             num /= 10;
         };
 
+        hash[ans]++;
+
         return ans;
     };
 
     int countDistinctIntegers(vector<int>& nums) {
-        vector<int> dum = nums;
         map<int, int> hash;
         int c = 0;
 
-        for (int elem : dum) nums.push_back(reverseDig(elem));
+        for (int elem : nums) reverseDig(elem, hash);
 
-        for (int elem : nums) {
-            if (!hash[elem]) c++;
-            hash[elem]++;
-        };
+        for (auto it : hash) c++;
 
         return c;
     }
