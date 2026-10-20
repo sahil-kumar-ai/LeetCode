@@ -1,16 +1,16 @@
 class Solution {
 public:
     string findCommonResponse(vector<vector<string>>& responses) {
+        set<string> s;
         map<string, int> hash;
 
         for (int i = 0; i < responses.size(); i++) {
-            set<string> s;
+            s.clear();
             for (int j = 0; j < responses[i].size(); j++) {
-                if(!s.contains(responses[i][j])) {
-                    ++hash[responses[i][j]];
-                }
                 s.insert(responses[i][j]);
             };
+
+            for (string st : s) hash[st]++;
         };
 
         int m = INT_MIN;
