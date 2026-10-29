@@ -4,11 +4,9 @@ public:
         string diff = nums[0] & 1 ? "Odd" : "Even";
 
         for (int i = 1; i < nums.size(); i++) {
-            string is = nums[i] & 1 ? "Odd" : "Even";
+            if ((nums[i] & 1 ? "Odd" : "Even") == diff) return false;
 
-            if (is == diff) return false;
-
-            diff = is;
+            diff = nums[i] & 1 ? "Odd" : "Even";
         }
         
         return true;
