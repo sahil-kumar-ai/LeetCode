@@ -4,12 +4,8 @@ public:
         string stk;
 
         for (int i = 0; i < s.size(); i++) {
-            if (isdigit(s[i]) && !stk.empty()) {
-                stk.pop_back();
-                continue;
-            }
-
-            stk += s[i];
+            if (isdigit(s[i]) && !stk.empty()) stk.pop_back();
+            else stk += s[i];
         }
 
         return stk;
