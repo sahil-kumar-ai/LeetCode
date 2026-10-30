@@ -11,6 +11,7 @@
 class Solution {
 public:
     using ln = ListNode*;
+    
     int pairSum(ListNode* head) {
         ln slow = head;
         ln fast = head;
