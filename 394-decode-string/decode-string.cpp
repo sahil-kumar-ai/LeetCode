@@ -1,55 +1,32 @@
 class Solution {
 public:
     string decodeString(string s) {
-        if(s.length() == 0) return s;
+        stack<pair<int, string>> stk;
+        string curr = "";
+        int num = 0;
 
-        string ans = "";
-        int currNum = 0;
-        stack<int> intStack;
-        stack<string> strStack;
+        for(char x : s) {
+            if(isdigit(x))
+                num = num * 10 + (x - '0');
 
-        for(auto &x : s) {
-            if(x >= '0' && x <= '9')
-                currNum = (currNum * 10) + (x - '0');
-            else {
-                if(x == '[') {
-                    intStack.push(currNum);
-                    currNum = 0;
-
-                    string temp = "";
-                    temp += x;
-                    strStack.push(temp);
-                }
-                else if(x == ']') {
-                    string temp = "";
-                    while(!strStack.empty() && strStack.top() != "[") {
-                        temp = strStack.top() + temp;
-                        strStack.pop();
-                    }
-                    strStack.pop();
-
-                    int num = intStack.top();
-                    intStack.pop();
-
-                    string temp_ans = "";
-                    for(int i = 0; i < num; ++i)
-                        temp_ans += temp;
-
-                    strStack.push(temp_ans);
-                }
-                else {
-                    string temp = "";
-                    temp += x;
-                    strStack.push(temp);
-                }
+            else if(x == '[') {
+                stk.push({num, curr});
+                num = 0;
+                curr = "";
             }
+            else if(x == ']') {
+                auto [k, prev] = stk.top();
+                stk.pop();
+
+                string temp = "";
+                for(int i = 0; i < k; i++)
+                    temp += curr;
+
+                curr = prev + temp;
+            }
+            else curr += x;
         }
 
-        while(!strStack.empty()) {
-            ans = strStack.top() + ans;
-            strStack.pop();
-        }
-
-        return ans;
+        return curr;
     }
 };
