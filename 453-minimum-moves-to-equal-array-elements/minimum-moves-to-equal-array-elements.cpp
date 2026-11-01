@@ -4,8 +4,8 @@ public:
         int mn = *min_element(nums.begin(), nums.end());
         int sum = 0;
 
-        for (int elem : nums) sum += mn - elem;
+        for (int elem : nums) sum += elem - mn;
 
-        return abs(sum);
+        return sum;
     }
 };
