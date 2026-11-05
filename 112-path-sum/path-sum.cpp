@@ -26,8 +26,7 @@ public:
         sum += root -> val;
 
         if (!(root -> left) && !(root -> right)) {
-            if (sum == target) {ans = true;
-            return;}
+            if (sum == target) ans = true;
 
             sum -= root -> val;
             return;
