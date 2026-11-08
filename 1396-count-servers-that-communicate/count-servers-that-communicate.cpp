@@ -18,7 +18,7 @@ public:
 
         for (int i = 0; i < rowLen; i++) {
             for (int j = 0; j < colLen; j++) {
-                if (grid[i][j] && (row[i] > 1 || col[j] > 1)) ans++;
+                if (grid[i][j] && max(row[i], col[j]) > 1) ans++;
             }
         };
 
