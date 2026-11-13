@@ -19,6 +19,6 @@ impl Solution {
             ans = ans.max(inc.max(dec));
         }
 
-        return ans;
+        ans
     }
 }
