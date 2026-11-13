@@ -1,1 +1,1 @@
-<h2>longest-strictly-increasing-or-strictly-decreasing-subarray Notes</h2><hr>[ Time taken: 23hrs 10m 6s ]
+<h2>longest-strictly-increasing-or-strictly-decreasing-subarray Notes</h2><hr>[ Time taken: 1d 5hrs 21m 48s ]
