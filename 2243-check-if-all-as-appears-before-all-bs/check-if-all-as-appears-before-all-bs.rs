@@ -5,7 +5,7 @@ impl Solution {
         for ch in s.chars() {
             if ch == 'b' {
                 is_b = true;
-            } else if ch == 'a' && is_b == true {
+            } else if is_b {
                 return false;
             }
         }
