@@ -1,8 +1,9 @@
 class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {
-        int ans = 0, size = nums.size();
+        int size = nums.size(), ans = 0;
         vector<int> prefixSum(size, 0);
+
         prefixSum[0] = nums[0];
 
         for (int i = 1; i < size; i++) prefixSum[i] = prefixSum[i - 1] + nums[i];
@@ -11,9 +12,9 @@ public:
         freq[0] = 1;
 
         for (int i = 0; i < size; i++) {
-            int fre = prefixSum[i] - k;
+            int val = prefixSum[i] - k;
 
-            if (freq.contains(fre)) ans += freq[fre];
+            if (freq.contains(val)) ans += freq[val];
             freq[prefixSum[i]]++;
         }
 
